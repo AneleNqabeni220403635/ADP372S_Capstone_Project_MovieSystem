@@ -1,5 +1,5 @@
 package za.ac.cput.repository;
-/* Movie.java
+/* IMovieRepository.java
 IMovieRepository model class
 Author: Anele Nqabeni (220403635)
 Date: 18 March 2024

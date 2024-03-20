@@ -1,5 +1,9 @@
 package za.ac.cput.factory;
-
+/* MovieFactoryTest.java
+MovieFactoryTest model class
+Author: Anele Nqabeni (220403635)
+Date: 19 March 2024
+*/
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import za.ac.cput.domain.Movie;
