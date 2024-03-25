@@ -1,5 +1,3 @@
-![5f50d441-d63f-4514-8525-feee7991bc94](https://github.com/AneleNqabeni220403635/ADP372S_Capstone_Project_MovieSystem/assets/159525201/82fe699f-2eb8-47a7-bead-
-
 Movie System Project
 
 Introduction
