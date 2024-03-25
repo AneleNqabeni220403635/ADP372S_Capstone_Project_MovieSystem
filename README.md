@@ -17,3 +17,5 @@ Team Members
 - *BookTicket Entity*: [Asanda Mbangata]
 - *TicketPayment Entity*: [Khethubonga Ngodi]
 - *Customer Entity*: [Thandiwe Mhlongo]
+
+![Class Diagram](images/MovieSystemClassDiagram.svg)
