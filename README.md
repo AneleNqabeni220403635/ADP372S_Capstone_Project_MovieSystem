@@ -3,6 +3,7 @@
 Movie System Project
 
 Introduction
+
 This project is developed as part of our coursework, aiming to build a comprehensive movie system. The system facilitates managing movies, bookings, payments, and customer interactions within a cinema context.
 
 Project Objective
