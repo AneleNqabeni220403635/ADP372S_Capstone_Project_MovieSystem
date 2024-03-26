@@ -1,13 +1,25 @@
 package za.ac.cput.domain;
 /* Main.java
     Main model class
-    Author: Anele Nqabeni (220403635), Thandiwe Mhlongo(222011777)
+    Author: Anele Nqabeni (220403635), Thandiwe Mhlongo(222011777), Hermanus Neethling (220526303)
     Date: 17 March 2024
     */
-import za.ac.cput.factory.CustomerFactory;
+
+import za.ac.cput.factory.BookTicketFactory;
 import za.ac.cput.factory.MovieFactory;
+import za.ac.cput.repository.BookTicketRepository;
+import za.ac.cput.repository.IBookTicketRepository;
+
+import java.time.LocalDateTime;
+import java.util.Set;
+
+import za.ac.cput.factory.CinemaFactory;
+import za.ac.cput.factory.CustomerFactory;
+import za.ac.cput.repository.CinemaRepository;
+import za.ac.cput.repository.ICinemaRepository;
 
 import java.util.Date;
+
 
 public class Main {
     public static void main(String[] args) {
@@ -19,6 +31,20 @@ public class Main {
 
         Movie movie2 = MovieFactory.createMovie("3", "John Wick 4", "Keanu Reeves", 2022, "Action", 210);
         printMovie(movie2);
+
+        BookTicket bookTicket1 = BookTicketFactory.createBookTicket("BFW-ZTRYT-213", "John Wick 4", "Daniella Gilbert", LocalDateTime.parse("2024-04-13T18:30"), "B17");
+        BookTicket bookTicket2 = BookTicketFactory.createBookTicket("XLT-FLBSW-887", "Lift", "Jonathan Ford", LocalDateTime.parse("2024-04-26T20:30"), "F50");
+        BookTicket bookTicket3 = BookTicketFactory.createBookTicket("SGB-MBWPA-652","Fast and Furious 8", "Sydney April", LocalDateTime.parse("2024-04-20T20:00"), "A05");
+
+        IBookTicketRepository bookTicketRepository = BookTicketRepository.getRepository();
+        bookTicketRepository.create(bookTicket1);
+        bookTicketRepository.create(bookTicket2);
+        bookTicketRepository.create(bookTicket3);
+
+        Set<BookTicket> allBookTickets = bookTicketRepository.getAll();
+        for (BookTicket bookTicket : allBookTickets) {
+            System.out.println(bookTicket);
+        }
 
         Customer customer1 = CustomerFactory.createCustomer("C123", "Thandiwe", "Mhlongo",
                 new Date(90, 01, 01), "thandiwemhlogo@gmail.com", "1234567890");
@@ -34,6 +60,28 @@ public class Main {
 
         System.out.println("\nCustomer 2:");
         printCustomerDetails(customer2);
+
+        // Cinema
+        System.out.println();
+        ICinemaRepository cinemaRepository = CinemaRepository.getInstance();
+        Cinema cinema1 = new Cinema.Builder()
+                .cinemaId("Cinema 1")
+                .numberOfRows(10)
+                .seatsPerRow(20)
+                .build();
+
+        cinemaRepository.save(cinema1);
+
+        Cinema cinema2 = CinemaFactory.createCinema("Cinema 2", 26, 50);
+        cinemaRepository.save(cinema2);
+
+        Cinema cinema3 = CinemaFactory.createCinema("Cinema 3", 8, 15);
+        cinemaRepository.save(cinema3);
+
+        cinemaRepository.delete(cinema2.getCinemaId());
+
+        for (Cinema cinema : cinemaRepository.findAll())
+            System.out.println(cinema);
     }
 
 
@@ -44,6 +92,7 @@ public class Main {
             System.out.println("Movie object not set");
         }
     }
+
     private static void printCustomerDetails(Customer customer) {
         if (customer != null) {
             System.out.println("Customer ID: " + customer.getCustomerId());
@@ -56,4 +105,5 @@ public class Main {
         }
     }
 }
+
 
