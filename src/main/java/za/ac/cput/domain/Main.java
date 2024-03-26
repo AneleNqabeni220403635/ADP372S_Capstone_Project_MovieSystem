@@ -1,11 +1,14 @@
 package za.ac.cput.domain;
 /* Main.java
     Main model class
-    Author: Anele Nqabeni (220403635), Thandiwe Mhlongo(222011777)
+    Author: Anele Nqabeni (220403635), Thandiwe Mhlongo(222011777), Hermanus Neethling (220526303)
     Date: 17 March 2024
     */
+import za.ac.cput.factory.CinemaFactory;
 import za.ac.cput.factory.CustomerFactory;
 import za.ac.cput.factory.MovieFactory;
+import za.ac.cput.repository.CinemaRepository;
+import za.ac.cput.repository.ICinemaRepository;
 
 import java.util.Date;
 
@@ -34,6 +37,28 @@ public class Main {
 
         System.out.println("\nCustomer 2:");
         printCustomerDetails(customer2);
+
+        // Cinema
+        System.out.println();
+        ICinemaRepository cinemaRepository = CinemaRepository.getInstance();
+        Cinema cinema1 = new Cinema.Builder()
+                .cinemaId("Cinema 1")
+                .numberOfRows(10)
+                .seatsPerRow(20)
+                .build();
+
+        cinemaRepository.save(cinema1);
+
+        Cinema cinema2 = CinemaFactory.createCinema("Cinema 2", 26, 50);
+        cinemaRepository.save(cinema2);
+
+        Cinema cinema3 = CinemaFactory.createCinema("Cinema 3", 8, 15);
+        cinemaRepository.save(cinema3);
+
+        cinemaRepository.delete(cinema2.getCinemaId());
+
+        for (Cinema cinema : cinemaRepository.findAll())
+            System.out.println(cinema);
     }
 
 
