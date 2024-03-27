@@ -9,6 +9,7 @@ import java.util.Set;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.HashMap;
+import java.util.function.BooleanSupplier;
 
 public class DirectorRepository implements IDirectorRepository {
     private static DirectorRepository repository = null;
@@ -44,8 +45,9 @@ public class DirectorRepository implements IDirectorRepository {
         return director;
     }
     @Override
-    public void delete(String directorId){
+    public boolean delete(String directorId){
         directorMap.remove(directorId);
+        return true;
     }
     @Override
     public Set<Director> getAll(){

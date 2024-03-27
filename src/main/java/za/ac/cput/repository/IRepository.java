@@ -1,4 +1,7 @@
 package za.ac.cput.repository;
+
+import java.util.function.BooleanSupplier;
+
 /* IRepository.java
 IRepository model class
 Author: Anele Nqabeni (220403635)
@@ -11,7 +14,7 @@ public interface IRepository <T, ID>{
 
     T update(T t);
 
-    void delete(ID id);
+    boolean delete(ID id);
 
 }
 
