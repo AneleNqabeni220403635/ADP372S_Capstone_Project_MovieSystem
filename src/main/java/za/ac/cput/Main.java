@@ -1,10 +1,11 @@
-package za.ac.cput.domain;
+package za.ac.cput;
 /* Main.java
     Main model class
-    Author: Anele Nqabeni (220403635), Thandiwe Mhlongo(222011777), Hermanus Neethling (220526303), Lindiwe Magagula (222037881)
+    Author: Anele Nqabeni (220403635), Thandiwe Mhlongo(222011777), Hermanus Neethling (220526303), Lindiwe Magagula (222037881), Asanda Mbangata (222927259), Khethubonga Ngodi(219294267)
     Date: 17 March 2024
     */
 
+import za.ac.cput.domain.*;
 import za.ac.cput.factory.*;
 import za.ac.cput.repository.BookTicketRepository;
 import za.ac.cput.repository.IBookTicketRepository;

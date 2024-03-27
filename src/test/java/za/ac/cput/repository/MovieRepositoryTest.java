@@ -67,11 +67,11 @@ class MovieRepositoryTest {
 
         Movie updatedMovie = new Movie.Builder()
                 .copy(avatarMovie)
-                .setDirector("James Cameron")
+                .setTitle("Avatar 2")
                 .build();
 
         assertNotNull(movieRepository.update(updatedMovie));
-        System.out.println("Success: director deleted");
+        System.out.println("Success: movie deleted");
     }
     @Test
     @Order(5)
