@@ -21,7 +21,7 @@ public class DirectorRepositoryTest {
     void testCreateDirector() {
         Director director = new Director.Builder()
                 .setDirectorId("4")
-                .setName("Jane Campion ")
+                .setName("Jane Campion")
                 .setGender("Female")
                 .setNationality("American")
                 .setMovieDirected("Barbie")
