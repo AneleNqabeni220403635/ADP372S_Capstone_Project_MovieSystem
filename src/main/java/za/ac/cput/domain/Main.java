@@ -1,7 +1,7 @@
 package za.ac.cput.domain;
 /* Main.java
     Main model class
-    Author: Anele Nqabeni (220403635), Thandiwe Mhlongo(222011777), Hermanus Neethling (220526303)
+    Author: Anele Nqabeni (220403635), Thandiwe Mhlongo(222011777), Hermanus Neethling (220526303), Lindiwe Magagula (222037881)
     Date: 17 March 2024
     */
 
@@ -15,6 +15,8 @@ import java.util.Set;
 
 import za.ac.cput.factory.CinemaFactory;
 import za.ac.cput.factory.CustomerFactory;
+import za.ac.cput.factory.DirectorFactory;
+import za.ac.cput.factory.MovieFactory;
 import za.ac.cput.repository.CinemaRepository;
 import za.ac.cput.repository.ICinemaRepository;
 
@@ -82,6 +84,18 @@ public class Main {
 
         for (Cinema cinema : cinemaRepository.findAll())
             System.out.println(cinema);
+
+        //Displaying Director
+        System.out.println("\n" + "Director:");
+
+        Director director = DirectorFactory.createDirector("1", "Vin Diesel", "Male", "American", "Witch Hunter");
+        printDirector(director);
+
+        Director director1 = DirectorFactory.createDirector("2", "Kevin Hart", "Male", "American", "Man from Toronto");
+        printDirector(director1);
+
+        Director director2 = DirectorFactory.createDirector("3", "Keanu Reeves", "Male", "Canadian", "The Matrix");
+        printDirector(director2);
     }
 
 
@@ -104,6 +118,14 @@ public class Main {
             System.out.println("Customer details not available.");
         }
     }
+    private static void printDirector(Director director) {
+        if (director != null) {
+            System.out.println(director);
+        } else {
+            System.out.println("Director object not set");
+        }
+    }
 }
+
 
 
