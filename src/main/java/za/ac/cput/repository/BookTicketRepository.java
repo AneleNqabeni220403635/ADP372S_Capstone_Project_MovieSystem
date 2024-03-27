@@ -9,6 +9,7 @@ Date: 21 March 2024
 import za.ac.cput.domain.BookTicket;
 import java.time.LocalDateTime;
 import java.util.*;
+import java.util.function.BooleanSupplier;
 
 public class BookTicketRepository implements IBookTicketRepository {
     private static BookTicketRepository repository = null;
@@ -49,11 +50,12 @@ public class BookTicketRepository implements IBookTicketRepository {
         return bookTicket;
     }
     @Override
-    public void delete(String bookTicketId) {
+    public boolean delete(String bookTicketId) {
         BookTicket bookTicket = read(bookTicketId);
         if (bookTicket != null) {
             bookTickets.remove(bookTicket);
         }
+        return true;
     }
     @Override
     public Set<BookTicket> getAll() {

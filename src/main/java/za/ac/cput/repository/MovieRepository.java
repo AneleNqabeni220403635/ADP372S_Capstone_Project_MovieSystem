@@ -9,6 +9,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
+import java.util.function.BooleanSupplier;
 
 public class MovieRepository implements IMovieRepository {
 
@@ -48,8 +49,9 @@ public class MovieRepository implements IMovieRepository {
     }
 
     @Override
-    public void delete(String id) {
+    public boolean delete(String id) {
         movieMap.remove(id);
+        return true;
     }
 
     @Override
