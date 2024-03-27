@@ -52,7 +52,7 @@ public class Director {
                 name.equals(director.name) &&
                 gender.equals(director.gender) &&
                 nationality.equals(director.nationality) &&
-                movieDirected.equals(director.movieDirected);
+                movieDirected.equals(director.movieDirected );
     }
 
     @Override

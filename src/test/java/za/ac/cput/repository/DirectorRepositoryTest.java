@@ -21,7 +21,7 @@ public class DirectorRepositoryTest {
     void testCreateDirector() {
         Director director = new Director.Builder()
                 .setDirectorId("4")
-                .setName("Jane Campion")
+                .setName("Jane Campion ")
                 .setGender("Female")
                 .setNationality("American")
                 .setMovieDirected("Barbie")
@@ -42,7 +42,7 @@ public class DirectorRepositoryTest {
     void testUpdateDirector() {
         Director updatedDirector = new Director.Builder()
                 .copy(directorRepository.read("4"))
-                .setName("Greta Gerwig")
+                .setName("Greta Gerwig ")
                 .build();
 
         assertNotNull(directorRepository.update(updatedDirector));
@@ -57,7 +57,7 @@ public class DirectorRepositoryTest {
 
         Director updatedDirector = new Director.Builder()
                 .copy(janeCampionDirector)
-                .setName("")
+                .setName("Greta Gerwig")
                 .build();
 
         assertNotNull(directorRepository.update(updatedDirector));
