@@ -32,7 +32,7 @@ public class DirectorFactoryTest {
     @Order(3)
     void testNotTheSameCreateKeanuReevesDirector(){
         assertNotEquals(director2, director1);
-        System.out.println("Test Passed.");
+        System.out.println("Test Passed");
     }
 
 }
