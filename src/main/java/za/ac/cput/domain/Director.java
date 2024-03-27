@@ -65,7 +65,7 @@ public class Director {
         return "Director{" +
                 "directorId='" + directorId + '\'' +
                 ", name='" + name + '\'' +
-                ", gender='" + gender + '\'' +
+                ", gender=" + gender + '\'' +
                 ", nationality='" + nationality + '\'' +
                 ", movieDirected='" + movieDirected +
                 '}';
