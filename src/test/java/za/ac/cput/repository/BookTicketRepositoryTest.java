@@ -23,7 +23,7 @@ class BookTicketRepositoryTest {
     @Test
     @Order(1)
     public void testCreateBookTicket() {
-        BookTicket bookTicket = new BookTicket.Builder().setBookTicketId("MGC-YKXWR-650").setMovie("Avatar").setCustomer("Cole Adams").setDateTime(LocalDateTime.parse("2024-05-04T17:30")).setSeatNumber("A02").build();
+        BookTicket bookTicket = new BookTicket.Builder().setBookTicketId("MGC-YKXWR-650").setMovieId("Avatar").setCustomer("Cole Adams").setDateTime(LocalDateTime.parse("2024-05-04T17:30")).setSeatNumber("A02").build();
         BookTicket createdBookTicket = bookTicketRepository.create(bookTicket);
 
         assertNotNull(createdBookTicket);

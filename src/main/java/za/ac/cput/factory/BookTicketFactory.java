@@ -11,14 +11,14 @@ import java.time.LocalDateTime;
 import java.util.Date;
 
 public class BookTicketFactory {
-    public static BookTicket createBookTicket(String bookTicketId, String movie, String customer, LocalDateTime dateTime, String seatNumber) {
-        if (isNullOrEmpty(movie) || isNullOrEmpty(customer) || dateTime == null || isNullOrEmpty(seatNumber)) {
+    public static BookTicket createBookTicket(String bookTicketId, String movieId, String customer, LocalDateTime dateTime, String seatNumber) {
+        if (isNullOrEmpty(movieId) || isNullOrEmpty(customer) || dateTime == null || isNullOrEmpty(seatNumber)) {
             return null;
         }
 
         return new BookTicket.Builder()
                 .setBookTicketId(bookTicketId)
-                .setMovie(movie)
+                .setMovieId(movieId)
                 .setCustomer(customer)
                 .setDateTime(dateTime)
                 .setSeatNumber(seatNumber)

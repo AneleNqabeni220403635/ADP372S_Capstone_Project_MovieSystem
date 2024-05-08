@@ -10,7 +10,7 @@ import java.util.Objects;
 import java.time.LocalDateTime;
 public class BookTicket {
     private String bookTicketId;
-    private String movie;
+    private String movieId;
     private String customer;
     private LocalDateTime dateTime;
     private String seatNumber;
@@ -19,7 +19,7 @@ public class BookTicket {
 
     private BookTicket(Builder builder) {
         this.bookTicketId = builder.bookTicketId;
-        this.movie = builder.movie;
+        this.movieId = builder.movieId;
         this.customer = builder.customer;
         this.dateTime = builder.dateTime;
         this.seatNumber = builder.seatNumber;
@@ -29,8 +29,8 @@ public class BookTicket {
         return bookTicketId;
     }
 
-    public String getMovie() {
-        return movie;
+    public String getMovieId() {
+        return movieId;
     }
 
     public String getCustomer() {
@@ -51,7 +51,7 @@ public class BookTicket {
         if (!(o instanceof BookTicket)) return false;
         BookTicket that = (BookTicket) o;
         return Objects.equals(getBookTicketId(), that.getBookTicketId()) &&
-                Objects.equals(getMovie(), that.getMovie()) &&
+                Objects.equals(getMovieId(), that.getMovieId()) &&
                 Objects.equals(getCustomer(), that.getCustomer()) &&
                 Objects.equals(getDateTime(), that.getDateTime()) &&
                 Objects.equals(getSeatNumber(), that.getSeatNumber());
@@ -59,14 +59,14 @@ public class BookTicket {
 
     @Override
     public int hashCode() {
-        return Objects.hash(getBookTicketId(), getMovie(), getCustomer(), getDateTime(), getSeatNumber());
+        return Objects.hash(getBookTicketId(), getMovieId(), getCustomer(), getDateTime(), getSeatNumber());
     }
 
     @Override
     public String toString() {
         return "BookTicket{" +
                 "bookTicketId='" + bookTicketId + '\'' +
-                ", movie='" + movie + '\'' +
+                ", movie='" + movieId + '\'' +
                 ", customer='" + customer + '\'' +
                 ", dateTime=" + dateTime +
                 ", seatNumber='" + seatNumber + '\'' +
@@ -75,7 +75,7 @@ public class BookTicket {
 
     public static class Builder {
         private String bookTicketId;
-        private String movie;
+        private String movieId;
         private String customer;
         private LocalDateTime dateTime;
         private String seatNumber;
@@ -85,8 +85,8 @@ public class BookTicket {
             return this;
         }
 
-        public Builder setMovie(String movie) {
-            this.movie = movie;
+        public Builder setMovieId(String movieId) {
+            this.movieId = movieId;
             return this;
         }
 
@@ -108,7 +108,7 @@ public class BookTicket {
         public Builder copy(BookTicket b) {
             if (b != null) {
                 this.bookTicketId = b.bookTicketId;
-                this.movie = b.movie;
+                this.movieId = b.movieId;
                 this.customer = b.customer;
                 this.dateTime = b.dateTime;
                 this.seatNumber = b.seatNumber;

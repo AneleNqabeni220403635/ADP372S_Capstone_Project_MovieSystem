@@ -29,32 +29,34 @@ public class CinemaRepository implements ICinemaRepository {
     }
 
     @Override
-    public Cinema findById(String cinemaId)
-    {
-        return cinemaMap.get(cinemaId);
-    }
-
-    @Override
     public List<Cinema> findAll()
     {
         return new ArrayList<>(cinemaMap.values());
     }
 
     @Override
-    public void save(Cinema cinema)
-    {
+    public Cinema create(Cinema cinema) {
         cinemaMap.put(cinema.getCinemaId(), cinema);
+        return cinema;
     }
 
     @Override
-    public void update(Cinema cinema)
+    public Cinema read(String cinemaId)
     {
-        cinemaMap.put(cinema.getCinemaId(), cinema);
+        return cinemaMap.get(cinemaId);
     }
 
     @Override
-    public void delete(String cinemaId)
+    public Cinema update(Cinema cinema)
+    {
+        cinemaMap.put(cinema.getCinemaId(), cinema);
+        return cinema;
+    }
+
+    @Override
+    public boolean delete(String cinemaId)
     {
         cinemaMap.remove(cinemaId);
+        return true;
     }
 }
