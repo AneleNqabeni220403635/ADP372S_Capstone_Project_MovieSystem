@@ -18,9 +18,9 @@ public class BookTicketRepository implements IBookTicketRepository {
     private BookTicketRepository() {
         bookTickets = new HashSet<>();
 
-        bookTickets.add(new BookTicket.Builder().setBookTicketId("BFW-ZTRYT-213").setMovie("John Wick 4").setCustomer("Daniella Gilbert").setDateTime(LocalDateTime.parse("2024-04-13T18:30")).setSeatNumber("B17").build());
-        bookTickets.add(new BookTicket.Builder().setBookTicketId("SGB-MBWPA-652").setMovie("Fast and Furious 8").setCustomer("Sydney April").setDateTime(LocalDateTime.parse("2024-04-20T20:00")).setSeatNumber("A05").build());
-        bookTickets.add(new BookTicket.Builder().setBookTicketId("XLT-FLBSW-887").setMovie("Lift").setCustomer("Jonathan Ford").setDateTime(LocalDateTime.parse("2024-04-26T20:30")).setSeatNumber("F50").build());
+        bookTickets.add(new BookTicket.Builder().setBookTicketId("BFW-ZTRYT-213").setMovieId("John Wick 4").setCustomer("Daniella Gilbert").setDateTime(LocalDateTime.parse("2024-04-13T18:30")).setSeatNumber("B17").build());
+        bookTickets.add(new BookTicket.Builder().setBookTicketId("SGB-MBWPA-652").setMovieId("Fast and Furious 8").setCustomer("Sydney April").setDateTime(LocalDateTime.parse("2024-04-20T20:00")).setSeatNumber("A05").build());
+        bookTickets.add(new BookTicket.Builder().setBookTicketId("XLT-FLBSW-887").setMovieId("Lift").setCustomer("Jonathan Ford").setDateTime(LocalDateTime.parse("2024-04-26T20:30")).setSeatNumber("F50").build());
     }
 
     public static BookTicketRepository getRepository() {

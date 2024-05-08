@@ -42,8 +42,9 @@ public class CustomerRepository implements ICustomerRepository {
     }
 
     @Override
-    public void delete(String customerId) {
+    public boolean delete(String customerId) {
         customerMap.remove(customerId);
+        return true;
     }
 
     @Override

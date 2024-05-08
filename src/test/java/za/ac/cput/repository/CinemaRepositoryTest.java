@@ -30,8 +30,8 @@ public class CinemaRepositoryTest {
                 .build();
 
         // When
-        cinemaRepository.save(cinema);
-        Cinema retrievedCinema = cinemaRepository.findById("Cinema123");
+        cinemaRepository.create(cinema);
+        Cinema retrievedCinema = cinemaRepository.read("Cinema123");
 
         // Then
         assertNotNull(retrievedCinema);
@@ -49,7 +49,7 @@ public class CinemaRepositoryTest {
                 .numberOfRows(8)
                 .seatsPerRow(15)
                 .build();
-        cinemaRepository.save(cinema);
+        cinemaRepository.create(cinema);
 
         Cinema updatedCinema = new Cinema.Builder()
                 .cinemaId("Cinema_XYZ")
@@ -61,7 +61,7 @@ public class CinemaRepositoryTest {
         cinemaRepository.update(updatedCinema);
 
         // Then
-        Cinema retrievedCinema = cinemaRepository.findById("Cinema_XYZ");
+        Cinema retrievedCinema = cinemaRepository.read("Cinema_XYZ");
         assertNotNull(retrievedCinema);
         assertEquals("Cinema_XYZ", retrievedCinema.getCinemaId());
         assertEquals(12, retrievedCinema.getNumberOfRows());
@@ -77,13 +77,13 @@ public class CinemaRepositoryTest {
                 .numberOfRows(5)
                 .seatsPerRow(10)
                 .build();
-        cinemaRepository.save(cinema);
+        cinemaRepository.create(cinema);
 
         // When
         cinemaRepository.delete("Cinema_DEF");
 
         // Then
-        Cinema retrievedCinema = cinemaRepository.findById("Cinema_DEF");
+        Cinema retrievedCinema = cinemaRepository.read("Cinema_DEF");
         assertNull(retrievedCinema);
     }
 
@@ -91,9 +91,9 @@ public class CinemaRepositoryTest {
     void testFindAll()
     {
         // Given
-        cinemaRepository.save(new Cinema.Builder().cinemaId("Cinema 1").numberOfRows(10).seatsPerRow(20).build());
-        cinemaRepository.save(new Cinema.Builder().cinemaId("Cinema 2").numberOfRows(20).seatsPerRow(40).build());
-        cinemaRepository.save(new Cinema.Builder().cinemaId("Cinema 3").numberOfRows(30).seatsPerRow(60).build());
+        cinemaRepository.create(new Cinema.Builder().cinemaId("Cinema 1").numberOfRows(10).seatsPerRow(20).build());
+        cinemaRepository.create(new Cinema.Builder().cinemaId("Cinema 2").numberOfRows(20).seatsPerRow(40).build());
+        cinemaRepository.create(new Cinema.Builder().cinemaId("Cinema 3").numberOfRows(30).seatsPerRow(60).build());
 
         // When
         List<Cinema> cinemaList = cinemaRepository.findAll();

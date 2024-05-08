@@ -69,13 +69,13 @@ public class Main {
                 .seatsPerRow(20)
                 .build();
 
-        cinemaRepository.save(cinema1);
+        cinemaRepository.create(cinema1);
 
         Cinema cinema2 = CinemaFactory.createCinema("Cinema 2", 26, 50);
-        cinemaRepository.save(cinema2);
+        cinemaRepository.create(cinema2);
 
         Cinema cinema3 = CinemaFactory.createCinema("Cinema 3", 8, 15);
-        cinemaRepository.save(cinema3);
+        cinemaRepository.create(cinema3);
 
         cinemaRepository.delete(cinema2.getCinemaId());
 
